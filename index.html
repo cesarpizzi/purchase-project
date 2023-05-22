@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Shopping</title>
+</head>
+<body>
+    <section id="main-container">
+        <h1>Shopping</h1>
+        <section id="container-products-list">
+            <div id="container-products">
+                <label for="i-products">
+                    <h2>Products:</h2>
+                </label>
+                <input type="text" name="n-products" id="i-products">
+                <button id="add-button">ADD</button>
+            </div>
+            <section id="products-list">
+                <p style="font-style: italic;">Products list:</p>
+                <p class="arroz"></p>
+            </section>
+            <section id="container-total-products">
+                <p>Total products:</p>
+                <p id="total-products">0</p>
+            </section>
+            <section id="container-total-buy-value">
+                <p>Total products purchased:</p>
+                <p id="total-buy-value">0</p>
+            </section>
+            <section id="container-total-value">
+                <p>Total value:</p>
+                <p id="total-value">R$ 0</p>
+            </section>
+        </section>
+        <section id="main-container-settings">
+            <div id="container-settings">
+                <div id="close-settings">
+                    <button id="close-button-settings">X</button>
+                </div>
+                <h1 id="product"></h1>
+                <div>
+                    <label for="i-quantity">Quantity:</label>
+                    <input type="number" name="n-quantity" id="i-quantity">
+                </div>
+                <div>
+                    <label for="i-price">Price:</label>
+                    <input type="number" name="n-price" id="i-price">
+                </div>
+                <button id="confirm-button">CONFIRM</button>
+            </div>
+        </section>
+    </section>
+    <!-- <div onclick="res()">res</div> -->
+    <script src="script.js"></script>
+</body>
+</html>
