@@ -37,6 +37,7 @@ confirmButton.addEventListener('click', () => {
 
     if (quantity.value.length != 0 && price.value.length != 0 && !(valueQuantity <= 0) && !(valuePrice <= 0)) {
         if (valueAttQ == 'readonly') {
+            quantity.focus()
             quantity.removeAttribute('readonly')
             price.removeAttribute('readonly')
             confirmButton.style.display = 'block'
@@ -50,7 +51,6 @@ confirmButton.addEventListener('click', () => {
             price.style.color = 'black'
             price.style.backgroundColor = 'white'
             price.style.outline = 'default'
-            console.log('aqui')
         } else {
             function checkNameListConfirm() {
                 for (let pos in listBuy) {
