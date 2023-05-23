@@ -224,7 +224,7 @@ addButton.addEventListener('click', () => {
                 return total
             }
 
-            totalValue.innerText = addListBuy()
+            totalValue.innerText = `R$ ${addListBuy()}`
             products.splice(checkNameList(), 1)
             totalBuy = listBuy.length
             totalBuyValue.innerText = totalBuy
