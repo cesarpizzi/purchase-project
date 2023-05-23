@@ -12,11 +12,10 @@ html {
 
 body {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    /* position: relative; */
+    position: relative;
     min-height: 100vh;
-    min-width: 100vh;
     font: normal 1.6rem Arial, Helvetica, sans-serif;
     background-color: lightgray;
 }
@@ -26,9 +25,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 56rem;
     min-width: 45rem;
-    flex-grow: 1;
+    height: 90rem;
     padding: 4rem 2rem;
     background-color: #e47248;
 }
