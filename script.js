@@ -50,10 +50,11 @@ confirmButton.addEventListener('click', () => {
             price.style.color = 'black'
             price.style.backgroundColor = 'white'
             price.style.outline = 'default'
+            console.log('aqui')
         } else {
             function checkNameListConfirm() {
                 for (let pos in listBuy) {
-                    if (listBuy[pos].name == product.innerText) {
+                    if (listBuy[pos].name == product.innerText.toLowerCase().replaceAll(' ', '')) {
                         listBuy[pos].quantity = valueQuantity
                         listBuy[pos].price = valuePrice
                         mContSettings.style.display = 'none'
@@ -61,17 +62,20 @@ confirmButton.addEventListener('click', () => {
                     }
                 }
                 listBuy.push({
-                    name: product.innerText,
+                    name: product.innerText.toLowerCase().replaceAll(' ', ''),
                     quantity: valueQuantity,
                     price: valuePrice,
                 })
+                console.log(listBuy)
+                console.log(product.innerText.toLowerCase().replaceAll(' ', ''))
                 mContSettings.style.display = 'none'
 
-                let classP = null
                 function checkIfBuy() {
                     for (let pos in listBuy) {
-                        if (listBuy[pos].name == product.innerText) {
-                            classP = `#${listBuy[pos].name.toLowerCase()}`
+                        if (listBuy[pos].name == product.innerText.toLowerCase().replaceAll(' ', '')) {
+                            let classP = ''
+                            classP = `#${listBuy[pos].name}`
+                            console.log(classP)
                             let divBack = productList.querySelector(classP)
                             divBack.style.backgroundColor = '#9ad5a8'
                         }
@@ -99,8 +103,8 @@ confirmButton.addEventListener('click', () => {
     }
 
     totalBuy = listBuy.length
-    totalBuyValue.innerHTML = totalBuy
-    totalValue.innerHTML = `R$ ${addListBuy()}`
+    totalBuyValue.innerText = totalBuy
+    totalValue.innerText = `R$ ${addListBuy()}`
 
 }) /* Verificar a questão da propagação do addEventListener */
 
@@ -116,7 +120,7 @@ addButton.addEventListener('click', () => {
         const buy = document.createElement('button')
         const x = document.createElement('button')
         products.push(inoutValue)
-        totalProducts.innerHTML = products.length
+        totalProducts.innerText = products.length
         div.classList.add('product-border')
         div.style.backgroundColor = '#F4E9FF'
         buy.style.fontSize = '1.6rem'
@@ -127,11 +131,11 @@ addButton.addEventListener('click', () => {
         x.style.padding = '.3rem .6rem'
         x.style.color = 'white'
         x.style.backgroundColor = '#E33D4B'
-        div.setAttribute('id', inoutValue.toLowerCase())
+        div.setAttribute('id', inoutValue.toLowerCase().replaceAll(' ', ''))
         p.setAttribute('class', inoutValue.toLowerCase())
-        p.innerHTML = inoutValue.toLowerCase()
-        buy.innerHTML = 'BUY'
-        x.innerHTML = 'X'
+        p.innerText = inoutValue.toLowerCase()
+        buy.innerText = 'BUY'
+        x.innerText = 'X'
         productList.appendChild(div)
         div.appendChild(p)
         div.appendChild(buy)
@@ -147,7 +151,7 @@ addButton.addEventListener('click', () => {
             let firstChildSett = buyFatherSett.firstChild.innerText
             product.innerText = firstChildSett
             const father = buy.parentElement
-            const firstChild = father.firstChild.innerText
+            const firstChild = father.firstChild.innerText.toLowerCase().replaceAll(' ', '')
 
             function checkNameListBuy() {
                 for (let pos in listBuy) {
@@ -194,7 +198,7 @@ addButton.addEventListener('click', () => {
             const father = x.parentElement
             father.style.display = 'none'
             input.focus()
-            const firstChild = father.firstChild.innerText
+            const firstChild = father.firstChild.innerText.toLowerCase().replaceAll(' ', '')
 
             for (let pos in listBuy) {
                 if (listBuy[pos].name.toLowerCase() == firstChild) {
@@ -220,11 +224,11 @@ addButton.addEventListener('click', () => {
                 return total
             }
 
-            totalValue.innerHTML = addListBuy()
+            totalValue.innerText = addListBuy()
             products.splice(checkNameList(), 1)
             totalBuy = listBuy.length
-            totalBuyValue.innerHTML = totalBuy
-            totalProducts.innerHTML = products.length
+            totalBuyValue.innerText = totalBuy
+            totalProducts.innerText = products.length
         })
     }
 })
