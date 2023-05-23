@@ -16,9 +16,9 @@ const products = []
 const listBuy = []
 let totalBuy = null
 
-function res() {
+/* function res() {
     console.log(listBuy)
-}
+} */
 
 document.addEventListener('keydown', (even) => {
     if (even.code == 'Enter' || even.code == 'NumpadEnter') {

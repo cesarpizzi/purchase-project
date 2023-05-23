@@ -27,9 +27,9 @@ body {
     align-items: center;
     width: 60rem;
     min-width: 45rem;
-    height: 60rem;
+    height: 75rem;
     margin: 1rem;
-    padding: 5rem;
+    padding: 4rem 2rem;
     background-color: #e47248;
 }
 
@@ -85,14 +85,25 @@ body {
 
 .product-border {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 3rem;
     align-items: center;
-    padding: .8rem;
+    padding: 2.2rem;
     border: .1rem solid black;
+    position: relative;
 }
 
 .product-border > p::first-letter {
     text-transform: capitalize;
+}
+
+.product-border > p {
+    position: absolute;
+    left: 2.2rem;
+    width: 40%;
+    max-height: 80%;
+    /* background-color: #293796; */
+    overflow: auto;
 }
 
 #container-total-products {
