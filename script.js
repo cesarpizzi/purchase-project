@@ -16,9 +16,9 @@ const products = []
 const listBuy = []
 let totalBuy = null
 
-/* function res() {
+function res() {
     console.log(listBuy)
-} */
+}
 
 document.addEventListener('keydown', (even) => {
     if (even.code == 'Enter' || even.code == 'NumpadEnter') {
@@ -196,7 +196,7 @@ addButton.addEventListener('click', () => {
 
         x.addEventListener('click', () => {
             const father = x.parentElement
-            father.style.display = 'none'
+            father.remove() /* remove do documento; não apenas visualmente como o display block */
             input.focus()
             const firstChild = father.firstChild.innerText.toLowerCase().replaceAll(' ', '')
 
